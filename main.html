@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  {%load static%}
+  <link rel="stylesheet" href={%static 'css/styles.css'%}>
+  <meta charset="utf-8">
+  <title>HANGIN</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,900;1,200&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <link rel="icon" href="/Users/arnabghosh_3112/Desktop/HingIn/images/favicon.ico">
+  <script defer src="/Users/arnabghosh_3112/Desktop/Web Dev (Udemy)/TinDog-Start-master/fontawesome/js/all.js"></script>
+  <!-- ===== Link Swiper's CSS ===== -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+  <link rel="canonical" href="/Users/arnabghosh_3112/Downloads/hackathon/templates">
+  <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script><script src="dashboard.js"></script>
+  <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- ===== Fontawesome CDN Link ===== -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Timing', 'Today', 'This Week'],
+          ['08:00',  10,      100],
+          ['09:00',  20,      20],
+          ['10:00',  5,      50],
+          ['12:00',  50,      300],
+          ['13:00',  30,      500],
+          ['14:00',  78,      300],
+          ['15:00',  100,      600],
+          ['16:00',  67,      800],
+          ['17:00',  90,      900],
+          ['18:00',  140,      1000],
+          ['19:00',  110,      700],
+          ['20:00',  90,      250],
+        ]);
+
+        var options = {
+          title: 'Foodys',
+          hAxis: {title: 'Timing',  titleTextStyle: {color: '#333'}},
+          vAxis: {title: 'No of Student',minValue: 0}
+        };
+
+        var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+</head>
+
+<body>
+
+  <section id="title">
+    <div class="container-fluid" style="padding: 3% 15% 7%;">
+    <nav class="navbar navbar-expand-lg navbar-dark " style="padding-bottom: 4.5rem;">
+
+      <a class="navbar-brand" style="font-family: "Ubuntu";
+      font-size: 3.5rem;
+      font-weight: bold;">HangIn</a><br>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+          
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#anylyzed-dataset">Dashboard</a>
+        </li>
+          <li class="nav-item">
+              <a class="nav-link" href="#feedback">FeedBack</a>
+          </li>
+         <li class="nav-item">
+              <a class="nav-link" href="#survey">Survey</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contactus">Contact Us</a>
+        </li>
+      </ul>
+      </div>
+    
+  </nav>
+  <div class="row">
+    <div class="col-lg-6">
+      <h1>Where do you want FootFall to be analyzed ??</h1>
+      <input type="text" class="form-control place" id="exampleFormControlInput1" placeholder="Foodys">
+    </div>
+    </div>
+    <div class="col-lg-6">
+    </div>
+  </div>
+</div>
+  </section>
+
+  <section id="anylyzed-dataset">
+    <div class="topic-text" style=" font-size: 50px;font-weight: 600;color: #6616d0;text-align: center;margin: 5px 0 0 10px ;padding-bottom: 20px;">Dashboard</div>
+    <div class="container">
+      <div id="chart_div" style="width: 100%; height: 500px;"></div>
+  </div>
+      
+  </section>
+  <!-- SURVEY -->
+
+  <section id="feedback">
+
+    <div class="topic-text-feedback">Feedback</div>
+    <div class="container">
+      <div class="content">
+        <div class="left-side">
+          <div class="address details">
+            <i class="fas fa-map-marker-alt"></i>
+            <div class="topic">Address</div>
+            <div class="text-one">Vellore Institute of Technology</div>
+            <div class="text-two">Bramhapuram Vellore - 632014 Tamil Nadu</div>
+          </div>
+          <div class="phone details">
+            <i class="fas fa-phone-alt"></i>
+            <div class="topic">Phone</div>
+            <div class="text-one">+0098 9893 5647</div>
+            <div class="text-two">+0096 3434 5678</div>
+            <div class="text-two">+0096 3434 5678</div>
+            <div class="text-two">+0096 3434 5678</div>
+          </div>
+          <div class="email details">
+            <i class="fas fa-envelope"></i>
+            <div class="topic">Email</div>
+            <div class="text-one">arnabghosh@gmail.com</div>
+            <div class="text-two">diya@gmail.com</div>
+            <div class="text-two">aamya@gmail.com</div>
+            <div class="text-two">shreeji@gmail.com</div>
+          </div>
+        </div>
+        <div class="right-side">
+          <div class="topic-text">Send us a message</div>
+          <p>Thank You for visiting our website . Please give a feedback related to this website</p>
+        <form action="#">
+          <div class="input-box">
+            <input type="text" placeholder="Enter your name">
+          </div>
+          <div class="input-box">
+            <input type="email" placeholder="Enter your email">
+          </div>
+          <div class="input-box message-box">
+            <input type="text" placeholder="message">
+          </div>
+          <div class="button">
+            <input type="button" value="Send Now" >
+          </div>
+        </form>
+      </div>
+      </div>
+    </div>
+  </section>
+<section id="survey">
+  <div class="topic-text">Survey</div>
+    <form id="form">
+
+      <!-- Details -->
+      <div class="form-control">
+        <label for="preference" id="label-preference">
+          What is your preference in food ?
+        </label>
+  
+        <!-- Input Type Text -->
+        <textarea name="comment" id="comment"
+          placeholder="Enter your comment here">
+        </textarea>
+  
+      <div class="form-control">
+        <label for="restaurant" id="label-restaurant">
+          What time will you like to come to our restaurant ?
+        </label>
+  
+        <!-- Input Type Email-->
+        <textarea name="comment" id="comment"
+          placeholder="Enter your comment here">
+        </textarea>
+  
+      <div class="form-control">
+        <label for="payment">
+          Which mode of payment will you prefer ?
+        </label>
+  
+        <!-- multi-line text input control -->
+        <textarea name="payment" id="payment"
+          placeholder="Enter your comment here">
+        </textarea>
+      </div>
+
+      <div class="form-control">
+        <label for="ambience">
+          What kind of ambience do you prefer ? 
+        </label>
+  
+        <!-- multi-line text input control -->
+        <textarea name="ambience" id="ambience"
+          placeholder="Enter your comment here">
+        </textarea>
+      </div>
+      
+      <div class="form-control">
+        <label for="order">
+          Would you prefer placing order form your phone or at the counter ??
+        </label>
+  
+        <!-- multi-line text input control -->
+        <textarea name="order" id="order"
+          placeholder="Enter your comment here">
+        </textarea>
+      </div>
+
+      <!-- Multi-line Text Input Control -->
+      <button type="submit" value="submit">
+        Submit
+      </button>
+    </form>
+  </section>
+ 
+
+  <section>
+
+  </section>
+  <section id="contactus">
+
+    <section id="developer">
+      <div class="topic-text">Developer</div>
+      <div class="swiper mySwiper container">
+        <div class="swiper-wrapper content">
+  
+          <div class="swiper-slide card">
+            <div class="card-content">
+              <div class="image">
+                <!--<img src="images/img1.jpg" alt="">-->
+              </div>
+  
+              <div class="media-icons">
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-github"></i>
+              </div>
+  
+              <div class="name-profession">
+                <span class="name">Arnab Ghosh</span>
+                <span class="profession">21BIT0414</span>
+              </div>
+  
+              
+  
+              <div class="button">
+                <button class="aboutMe">About Me</button>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide card">
+            <div class="card-content">
+              <div class="image">
+                <!--<img src="images/img2.jpg" alt="">-->
+              </div>
+  
+              <div class="media-icons">
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-github"></i>
+              </div>
+  
+              <div class="name-profession">
+                <span class="name">Aamya </span>
+                <span class="profession">21BIT0412</span>
+              </div>
+  
+              <div class="button">
+                <button class="aboutMe">About Me</button>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide card">
+            <div class="card-content">
+              <div class="image">
+                <!--<img src="images/img3.jpg" alt="">-->
+              </div>
+  
+              <div class="media-icons">
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-github"></i>
+              </div>
+  
+              <div class="name-profession">
+                <span class="name">Shreeji</span>
+                <span class="profession">21BIT0414</span>
+              </div>
+  
+              
+  
+              <div class="button">
+                <button class="aboutMe">About Me</button>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide card">
+            <div class="card-content">
+              <div class="image">
+                <!--<img src="images/img4.jpg" alt="">-->
+              </div>
+  
+              <div class="media-icons">
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-github"></i>
+              </div>
+  
+              <div class="name-profession">
+                <span class="name">Diya</span>
+                <span class="profession">21BIT0412</span>
+              </div>
+  
+              
+  
+              <div class="button">
+                <button class="aboutMe">About Me</button>
+              </div>
+            </div>
+          </div>
+          
+  
+        </div>
+      </div>
+  
+      <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+    </section>
+  
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        slidesPerGroup: 3,
+        loop: true,
+        loopFillGroupWithBlank: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>
+  
+      
+
+  </section>
+
+
+  <!-- Footer -->
+
+  <footer id="footer">
+
+    <i class="fa-brands fa-instagram links"></i>
+    <i class="fa-brands fa-facebook-f links"></i>
+    <i class="fa-brands fa-twitter links"></i>
+    <i class="fa-solid fa-envelope links"></i>
+    <p>© Copyright HangIn</p>
+
+  </footer>
+
+
+
+</body>
+
+</html>
